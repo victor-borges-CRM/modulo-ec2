@@ -17,3 +17,17 @@ variable "nome" {
   default     = "Default_TF"
   description = "Nome da máquina"
 }
+
+variable "vpc_security_group_ids" {
+  type        = string
+  default     = "Default-TF"
+  description = "ID do grupo de seguranca"
+}
+
+variable "iam_instance_profile" {
+  type        = string
+  default     = "Default-TF"
+  description = "Perfil da instancia para associar a uma role"
+}
+
+

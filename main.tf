@@ -19,10 +19,10 @@ data "aws_vpc" "vpc_padrao" {
 }
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
-  instance_type = var.tipo_instancia
-  #iam_instance_profile = aws_iam_instance_profile.perfil_ec2.name
-  #vpc_security_group_ids = 
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = var.tipo_instancia
+  iam_instance_profile   = aws_iam_instance_profile.perfil_ec2.name
+  vpc_security_group_ids = var.vpc_security_group_ids
 
   tags = {
     Name = var.nome

@@ -1,10 +1,10 @@
-variable "instance_type" {
+variable "tipo_instancia" {
   type        = string
   default     = "Default_TF"
   description = "Tipo de maquina"
 }
 
-variable "name" {
+variable "nome" {
   type        = string
   default     = "Default_TF"
   description = "Nome da máquina"

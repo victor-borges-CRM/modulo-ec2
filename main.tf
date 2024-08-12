@@ -14,12 +14,17 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"]
 }
 
+data "aws_vpc" "vpc_padrao" {
+  id = var.vpc_id
+}
+
 resource "aws_instance" "web" {
-  ami                  = data.aws_ami.ubuntu.id
-  instance_type        = "t3.micro"
-  iam_instance_profile = aws_iam_instance_profile.perfil_ec2.name
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = var.instance_type
+  #iam_instance_profile = aws_iam_instance_profile.perfil_ec2.name
+  #vpc_security_group_ids = 
 
   tags = {
-    Name = "Teste_INF_561"
+    Name = var.name
   }
 }

@@ -24,6 +24,14 @@ resource "aws_instance" "web" {
   iam_instance_profile   = var.iam_instance_profile
   vpc_security_group_ids = var.vpc_security_group_ids
 
+  metadata_options {
+    http_tokens = "required"
+  }
+
+  root_block_device {
+    encrypted = true
+  }
+
   tags = {
     Name = var.nome
   }

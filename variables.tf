@@ -19,8 +19,8 @@ variable "nome" {
 }
 
 variable "vpc_security_group_ids" {
-  type        = string
-  default     = "Default-TF"
+  type        = list(string)
+  default     = ["Default_TF"]
   description = "ID do grupo de seguranca"
 }
 

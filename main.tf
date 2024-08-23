@@ -22,13 +22,13 @@ resource "tls_private_key" "chave_ssh" {
 }
 
 resource "aws_key_pair" "generated_key" {
-  key_name   = "rapid7-collector"
+  key_name   = "Teste_conexao"
   public_key = tls_private_key.chave_ssh.public_key_openssh
 
   provisioner "local-exec" {
     command = <<-EOT
-      echo '${tls_private_key.chave_ssh.private_key_pem}' > ./'rapid7-collector'.pem
-      chmod 400 ./'rapid7-collector'.pem
+      echo '${tls_private_key.chave_ssh.private_key_pem}' > ./'Teste_conexao'.pem
+      chmod 400 ./'Teste_conexao'.pem
     EOT
   }
 }

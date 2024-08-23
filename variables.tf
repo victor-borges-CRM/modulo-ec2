@@ -5,6 +5,14 @@ variable "vpc_id" {
   description = "ID da VPC padrão da CRMBonus"
 }
 
+#SUBNET
+variable "subnet_id" {
+  type        = string
+  default     = "Default_TF"
+  description = "description"
+}
+
+
 #EC2
 variable "tipo_instancia" {
   type        = string

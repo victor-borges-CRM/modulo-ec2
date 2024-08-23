@@ -54,9 +54,10 @@ resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.tipo_instancia
   #iam_instance_profile   = var.iam_instance_profile
-  vpc_security_group_ids = var.vpc_security_group_ids
-  subnet_id              = data.aws_subnet.selected.id
-  key_name               = aws_key_pair.generated_key.key_name
+  vpc_security_group_ids      = var.vpc_security_group_ids
+  subnet_id                   = data.aws_subnet.selected.id
+  associate_public_ip_address = true
+  key_name                    = aws_key_pair.generated_key.key_name
 
   metadata_options {
     http_tokens = "required"

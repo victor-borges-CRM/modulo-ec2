@@ -23,7 +23,7 @@ resource "tls_private_key" "chave_ssh" {
 
 resource "aws_key_pair" "generated_key" {
   key_name   = "Teste_conexao"
-  public_key = tls_private_key.chave_ssh.public_key_openssh
+  public_key = tls_private_key.chave_ssh.public_key_pem
 
   provisioner "local-exec" {
     command = <<-EOT
